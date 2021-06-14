@@ -1,0 +1,19 @@
+name: "CMake Project Version"
+description: "Read project version from a CMakeLists.txt file"
+inputs:
+  file:
+    description: "file name of CMake file"
+    required: true
+    default: "CMakeFiles.txt"
+  path: # location of CMakeFiles.txt
+    description: "location of project-level CMakeFiles.txt"
+    required: true
+    default: "."
+outputs:
+  version: # id of output
+    description: "Full version string"
+  project:
+    description: "Project name"
+runs:
+  using: "node12"
+  main: "index.js"

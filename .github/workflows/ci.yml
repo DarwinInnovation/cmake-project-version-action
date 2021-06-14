@@ -1,0 +1,22 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test action
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Test1
+        uses: ./ # Uses an action in the root directory
+        id: test1
+        with:
+          path: "tests"
+      - name: Test1 - Check version
+        if: steps.test1.outputs.version != '1.0.0'
+        run: exit 1
+      - name: Test1 - Check project
+        if: steps.test1.outputs.project != 'Test1'
+        run: exit 1
