@@ -4,9 +4,9 @@ inputs:
   file:
     description: "file name of CMake file"
     required: true
-    default: "CMakeFiles.txt"
-  path: # location of CMakeFiles.txt
-    description: "location of project-level CMakeFiles.txt"
+    default: "CMakeLists.txt"
+  path:
+    description: "location of project-level CMakeLists.txt"
     required: true
     default: "."
 outputs:
