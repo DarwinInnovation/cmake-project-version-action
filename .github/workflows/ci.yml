@@ -20,3 +20,15 @@ jobs:
       - name: Test1 - Check project
         if: steps.test1.outputs.project != 'Test1'
         run: exit 1
+      - name: Test2
+        uses: ./ # Uses an action in the root directory
+        id: test2
+        with:
+          path: "tests"
+          file: "CmakeLists_Test2.txt"
+      - name: Test2 - Check version
+        if: steps.test2.outputs.version != '1.2.0'
+        run: exit 1
+      - name: Test2 - Check project
+        if: steps.test2.outputs.project != 'Test2'
+        run: exit 1
