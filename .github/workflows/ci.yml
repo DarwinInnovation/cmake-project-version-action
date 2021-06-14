@@ -25,7 +25,7 @@ jobs:
         id: test2
         with:
           path: "tests"
-          file: "CmakeLists_Test2.txt"
+          file: "CMakeLists_Test2.txt"
       - name: Test2 - Check version
         if: steps.test2.outputs.version != '1.2.0'
         run: exit 1
