@@ -10,7 +10,7 @@ inputs:
     required: true
     default: "."
 outputs:
-  version: # id of output
+  version:
     description: "Full version string"
   project:
     description: "Project name"
