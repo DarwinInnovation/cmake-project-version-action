@@ -30,9 +30,10 @@ async function processCmakeLists(cmakeListsPath) {
 try {
   // `who-to-greet` input defined in action metadata file
   const projectPath = core.getInput("path");
-  console.log(`Looking for CMakeLists.txt in ${projectPath}`);
+  const cmakeLists = core.getInput("file");
+  console.log(`Looking for ${cmakeLists} in ${projectPath}`);
 
-  const cmakeListsPath = path.join(projectPath, "CMakeLists.txt");
+  const cmakeListsPath = path.join(projectPath, cmakeLists);
 
   processCmakeLists(cmakeListsPath)
     .then((result) => {
